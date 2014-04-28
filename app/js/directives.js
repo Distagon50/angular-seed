@@ -1,11 +1,12 @@
 'use strict';
 
 /* Directives */
+var myAppDirectives = angular.module('myAppDirectives', []);
 
-
-angular.module('myApp.directives', []).
-  directive('appVersion', ['version', function(version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
-    };
-  }]);
+myAppDirectives.directive('githubUser', function() {
+	return {
+		restrict: 'E',
+		replace: true,
+		templateUrl: 'partials/github-user.html'
+	}
+});
